@@ -19,7 +19,7 @@ const sendFirebaseNotification = async (req,res)=>{
         });
     }
 }
-
+//Every minute send notification
 async function sendEveryMinuteNotification(){
     const title = "Scheduled Notification";
     const body = "This is a scheduled notification sent every minute.";
