@@ -1,7 +1,7 @@
 //Node-Admin//src/controllers/FirebaseController.js
 
 const NotificationService = require('../service/NotificationService');
-
+require('dotenv').config();
 const sendFirebaseNotification = async (req,res)=>{
     try{
         const {title,body,deviceToken} =req.body;
@@ -23,7 +23,7 @@ const sendFirebaseNotification = async (req,res)=>{
 async function sendEveryMinuteNotification(){
     const title = "Scheduled Notification";
     const body = "This is a scheduled notification sent every minute.";
-    const deviceToken ="edcq-OInVJjI9gBPjbe3na:APA91bHv_MYyh5gN5KWa41sI37TMtTL_EVs9aeNPoxWqrsyQps1f24f6ld1yK_JGohiA7RU4NpH67zByHMwW4ikZns5ctA-7o3LyDmbHrNwKI8F__kh3t2c"
-     await NotificationService.sendNotification(title,body,deviceToken)   
+    const deviceToken = process.env.TEST_DEVICE_TOKEN
+    await NotificationService.sendNotification(title,body,deviceToken)   
 }
 module.exports = {sendFirebaseNotification,sendEveryMinuteNotification};

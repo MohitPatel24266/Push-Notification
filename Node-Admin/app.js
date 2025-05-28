@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use('/api/firebase', firebaseRoute)
+//*/10 * * * * * for 10 second
 
 cron.schedule("* * * * *", async () => {
     console.log("Running a task every minute");
