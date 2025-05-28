@@ -1,0 +1,9 @@
+# Ignore Firebase Admin SDK private key file
+Node-admin/src/utils/firebaseAdminSDK.json
+.env
+
+Node-admin/node_modules/
+
+admin/node_modules/
+
+user/node_modules/
